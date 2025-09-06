@@ -1,0 +1,390 @@
+/* ULTIMATE MOBILE SCROLLING PERFORMANCE CSS - 2025 Edition */
+/* Apply to ALL pages for consistent ultra-smooth mobile scrolling */
+
+/* ======================== CORE SCROLL OPTIMIZATION ======================== */
+
+/* HARDWARE ACCELERATION & SMOOTH SCROLLING - Foundation */
+html {
+  height: 100%;
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
+  contain: layout style;
+  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: scroll-position;
+  scroll-snap-type: none; /* Prevent snap interference */
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  transform: translateZ(0); /* Hardware acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: scroll-position;
+  contain: layout style;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================== MOBILE-SPECIFIC OPTIMIZATIONS ======================== */
+
+@media (max-width: 768px) {
+  /* ULTRA-SMOOTH MOBILE SCROLLING */
+  html {
+    scroll-behavior: auto !important; /* Instant scroll for immediate response */
+    overscroll-behavior-y: contain; /* Prevent bounce scrolling */
+    -webkit-overflow-scrolling: touch;
+    height: auto;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  body {
+    padding-top: 120px !important;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    -webkit-tap-highlight-color: transparent;
+    /* PERFORMANCE OPTIMIZATIONS */
+    transform: translateZ(0);
+    will-change: scroll-position;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    contain: layout style;
+  }
+  
+  /* OPTIMIZE ALL SCROLLABLE CONTAINERS */
+  section, nav, .nav-links, main, article, aside {
+    contain: layout style;
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* NAVIGATION SCROLL OPTIMIZATION */
+  nav {
+    contain: layout style;
+    transform: translateZ(0);
+    will-change: transform;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .nav-links {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    contain: layout style;
+    transform: translateZ(0);
+    position: fixed;
+    top: 120px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* ======================== TOUCH OPTIMIZATIONS ======================== */
+
+@media (max-width: 768px) {
+  /* ZERO-LATENCY TOUCH RESPONSE */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* RE-ENABLE TEXT SELECTION WHERE NEEDED */
+  p, span, div, h1, h2, h3, h4, h5, h6, label, li {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* OPTIMIZE INTERACTIVE ELEMENTS */
+  a, button, .btn, input, select, textarea, .menu-toggle {
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    touch-action: manipulation !important;
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ======================== FORM SCROLL OPTIMIZATION ======================== */
+
+@media (max-width: 768px) {
+  /* FORMS - PREVENT ZOOM AND ENSURE SMOOTH SCROLLING */
+  input, select, textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+    transform: translateZ(0);
+    contain: layout style;
+  }
+  
+  form {
+    contain: layout style;
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* FORM FIELDS OPTIMIZATION */
+  .form-group, .form-field {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+}
+
+/* ======================== ANIMATION PERFORMANCE ======================== */
+
+@media (max-width: 768px) {
+  /* ULTRA-FAST TRANSITIONS */
+  .nav-links a, .btn, .menu-toggle {
+    transition: all 0.15s ease !important; /* Faster than 0.3s */
+  }
+  
+  /* OPTIMIZED HOVER EFFECTS */
+  .nav-links a:hover, .nav-links a:active {
+    background: rgba(137, 207, 240, 0.2);
+    transform: translateZ(0);
+  }
+  
+  .btn:hover, .btn:active {
+    transform: translateY(-2px) translateZ(0);
+    transition: all 0.15s ease;
+  }
+}
+
+/* ======================== SCROLL CONTAINMENT ======================== */
+
+@media (max-width: 768px) {
+  /* PREVENT LAYOUT THRASHING */
+  section {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+  
+  header {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+  
+  footer {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+  
+  /* CARD/BOX COMPONENTS */
+  .rep-team-box, .calendar-box, .card, .box {
+    contain: layout style;
+    transform: translateZ(0);
+    transition: all 0.2s ease;
+  }
+}
+
+/* ======================== SCROLLBAR STYLING ======================== */
+
+@media (max-width: 768px) {
+  /* CUSTOM SCROLLBAR FOR BETTER UX */
+  body::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: rgba(137, 207, 240, 0.6);
+    border-radius: 4px;
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .nav-links::-webkit-scrollbar-thumb {
+    background: rgba(137, 207, 240, 0.4);
+    border-radius: 3px;
+  }
+}
+
+/* ======================== REDUCED MOTION SUPPORT ======================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html, body {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================== HIGH CONTRAST SUPPORT ======================== */
+
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid #fff;
+  }
+  
+  .nav-links a {
+    border: 1px solid transparent;
+  }
+  
+  .nav-links a:hover {
+    border-color: #89CFF0;
+  }
+}
+
+/* ======================== MOBILE VIEWPORT OPTIMIZATION ======================== */
+
+@media (max-width: 768px) {
+  /* SAFE AREA HANDLING */
+  nav {
+    width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
+    left: env(safe-area-inset-left);
+    right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* ======================== STAR ANIMATION OPTIMIZATION ======================== */
+
+@media (max-width: 768px) {
+  /* DISABLE ALL STARS ON MOBILE FOR MAXIMUM PERFORMANCE */
+  .star, .stars {
+    display: none !important;
+    opacity: 0 !important;
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  
+  /* REMOVE STAR CONTAINER ON MOBILE */
+  #stars {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* ======================== LOADING STATE OPTIMIZATION ======================== */
+
+body.loading {
+  visibility: hidden;
+  opacity: 0;
+}
+
+body.loaded {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+
+/* ======================== PRINT OPTIMIZATION ======================== */
+
+@media print {
+  * {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  nav, .back-to-top, .stars {
+    display: none !important;
+  }
+  
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* ======================== EXPERIMENTAL FEATURES ======================== */
+
+/* SCROLL TIMELINE SUPPORT (Future-proofing) */
+@supports (animation-timeline: scroll()) {
+  body {
+    animation-timeline: scroll();
+    animation-name: scrollOptimization;
+  }
+  
+  @keyframes scrollOptimization {
+    from { will-change: scroll-position; }
+    to { will-change: auto; }
+  }
+}
+
+/* CONTAINER QUERIES (Future-proofing) */
+@supports (container-type: inline-size) {
+  section {
+    container-type: inline-size;
+  }
+}
+
+/* ======================== BROWSER COMPATIBILITY ======================== */
+
+/* SAFARI BACKDROP FILTER FALLBACK */
+@supports not (backdrop-filter: blur(10px)) {
+  nav {
+    background: rgba(0, 0, 0, 0.98);
+  }
+}
+
+/* FIREFOX SCROLLBAR */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(137, 207, 240, 0.6) rgba(0, 0, 0, 0.3);
+}
+
+/* ======================== PERFORMANCE MONITORING ======================== */
+
+/* LAYOUT SHIFT PREVENTION */
+@media (max-width: 768px) {
+  img, video, iframe {
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: attr(width) / attr(height);
+  }
+  
+  /* PREVENT CLS FROM NAVIGATION */
+  .nav-links {
+    min-height: 44px;
+  }
+  
+  /* PREVENT CLS FROM IMAGES */
+  .nav-logo {
+    height: 50px;
+    width: auto;
+  }
+}
+
+/* ======================== FINAL OPTIMIZATIONS ======================== */
+
+@media (max-width: 768px) {
+  /* MOMENTUM SCROLLING ENHANCEMENT */
+  .nav-links, section, main {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+  }
+  
+  /* SCROLL ANCHORING */
+  html {
+    overflow-anchor: auto;
+  }
+  
+  /* SUBPIXEL RENDERING */
+  * {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

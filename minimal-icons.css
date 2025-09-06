@@ -1,0 +1,84 @@
+/* Minimal Icons - Replace Font Awesome for Performance */
+/* Only includes the icons actually used on the site */
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  font-style: normal;
+  line-height: 1;
+}
+
+/* Facebook Icon */
+.fab.fa-facebook:before,
+.icon-facebook:before {
+  content: "📘";
+  font-size: 1.1em;
+}
+
+/* Instagram Icon */
+.fab.fa-instagram:before,
+.icon-instagram:before {
+  content: "📷";
+  font-size: 1.1em;
+}
+
+/* Alternative text-based icons for better performance */
+.social-text .fab.fa-facebook:before {
+  content: "FB";
+  font-weight: bold;
+  font-size: 0.9em;
+  background: #1877f2;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.social-text .fab.fa-instagram:before {
+  content: "IG";
+  font-weight: bold;
+  font-size: 0.9em;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* SVG-based icons for crisp rendering */
+.icon-svg {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentColor;
+  vertical-align: -0.2em;
+}
+
+/* Facebook SVG */
+.icon-facebook-svg {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="%2389CFF0"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Instagram SVG */
+.icon-instagram-svg {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C8.396 0 7.929.01 6.684.048 5.443.085 4.6.204 3.875.43c-.789.306-1.459.717-2.126 1.384S.669 3.124.363 3.913C.137 4.639.018 5.482-.019 6.724-.057 7.97-.067 8.437-.067 12.017c0 3.58.01 4.047.048 5.293.037 1.241.156 2.084.38 2.81.308.787.718 1.457 1.384 2.124.667.666 1.336 1.076 2.124 1.384.726.226 1.569.344 2.81.38 1.247.038 1.714.048 5.294.048 3.58 0 4.047-.01 5.293-.048 1.241-.036 2.084-.154 2.81-.38.788-.308 1.458-.718 2.124-1.384.666-.667 1.076-1.337 1.384-2.124.226-.726.344-1.569.38-2.81.038-1.246.048-1.714.048-5.294 0-3.58-.01-4.047-.048-5.293-.036-1.241-.154-2.084-.38-2.81-.308-.788-.718-1.458-1.384-2.124C18.458.748 17.788.338 17 .03 16.274-.196 15.431-.315 14.19-.352 12.944-.39 12.477-.4 8.897-.4L12.017 0zm0 2.162c3.518 0 3.944.012 5.33.048 1.286.058 1.983.27 2.447.448.615.239 1.053.525 1.515.987.462.462.748.9.987 1.515.178.464.39 1.161.448 2.447.036 1.386.048 1.812.048 5.33 0 3.518-.012 3.944-.048 5.33-.058 1.286-.27 1.983-.448 2.447-.239.615-.525 1.053-.987 1.515-.462.462-.9.748-1.515.987-.464.178-1.161.39-2.447.448-1.386.036-1.812.048-5.33.048-3.518 0-3.944-.012-5.33-.048-1.286-.058-1.983-.27-2.447-.448-.615-.239-1.053-.525-1.515-.987-.462-.462-.748-.9-.987-1.515-.178-.464-.39-1.161-.448-2.447-.036-1.386-.048-1.812-.048-5.33 0-3.518.012-3.944.048-5.33.058-1.286.27-1.983.448-2.447.239-.615.525-1.053.987-1.515.462-.462.9-.748 1.515-.987.464-.178 1.161-.39 2.447-.448 1.386-.036 1.812-.048 5.33-.048z" fill="%2389CFF0"/><path d="M12.017 5.838A6.18 6.18 0 0 0 5.838 12.017a6.18 6.18 0 0 0 6.179 6.179 6.18 6.18 0 0 0 6.179-6.179 6.18 6.18 0 0 0-6.179-6.179zm0 10.188a4.01 4.01 0 1 1 0-8.02 4.01 4.01 0 0 1 0 8.02z" fill="%2389CFF0"/><circle cx="18.406" cy="5.594" r="1.44" fill="%2389CFF0"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Fallback for older browsers */
+@supports not (background-image: url('data:image/svg+xml')) {
+  .icon-facebook-svg:before {
+    content: "f";
+    font-weight: bold;
+  }
+  
+  .icon-instagram-svg:before {
+    content: "i";
+    font-weight: bold;
+  }
+}

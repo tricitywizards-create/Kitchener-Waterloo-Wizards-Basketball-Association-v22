@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Critical Meta Tags First -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Kitchener-Waterloo Wizards Basketball Association | Youth Basketball Programs in KW</title>
+  
+  <!-- Essential Favicon Only (Reduced from 5 to 2) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/wizard-logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/wizard-basketball-logo.png">
+  
+  <!-- Critical SEO Meta -->
+  <meta name="description" content="Kitchener-Waterloo Wizards Basketball Association - Youth basketball programs, rep teams, development training, and individual coaching in the KW area.">
+  <meta name="theme-color" content="#89CFF0">
+  <link rel="canonical" href="https://kitchener-waterloo-wizards.com/">
+  
+  <!-- Critical Mobile Meta -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="images/wizard-basketball-logo.png" as="image" media="(max-width: 768px)">
+  
+  <!-- Inline Critical CSS for Instant Rendering -->
+  <style>
+    /* Critical Mobile CSS - Inlined for zero render blocking */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color: white;
+      background: #000;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      padding-top: 120px !important;
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+      padding-bottom: env(safe-area-inset-bottom);
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(137, 207, 240, 0.6) rgba(0, 0, 0, 0.3);
+      visibility: hidden; /* Prevent FOUC */
+    }
+
+    body.loaded {
+      visibility: visible;
+    }
+
+    body::-webkit-scrollbar {
+      width: 8px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: rgba(137, 207, 240, 0.6);
+      border-radius: 4px;
+    }
+
+    /* Header - Critical above the fold */
+    header {
+      padding: 1rem 2rem 0.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: white;
+      text-shadow: 0 0 5px #89CFF0, 0 0 10px #89CFF0, 0 0 15px #6a0dad;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-align: center;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 1.5rem;
+    }
+
+    .header-text {
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Navigation - Critical */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(137, 207, 240, 0.2);
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      min-height: auto;
+    }
+
+    .mobile-nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0.5rem 0;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      height: 50px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: #89CFF0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 0.75rem;
+      min-height: 44px;
+      min-width: 44px;
+      transition: all 0.3s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(137, 207, 240, 0.2);
+    }
+
+    .menu-toggle:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #89CFF0;
+    }
+
+    .menu-toggle.active {
+      transform: rotate(90deg);
+      color: #fff;
+    }
+
+    .nav-links {
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.95);
+      border-radius: 8px;
+      padding: 0.8rem 0;
+      margin-top: 0;
+      box-shadow: 0 0 20px rgba(137,207,240,0.3);
+      transition: all 0.3s ease;
+      position: fixed;
+      top: 120px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links.active {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-links a {
+      color: #89CFF0;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(137, 207, 240, 0.2);
+    }
+
+    .nav-links a:hover, .nav-links a:active {
+      color: #fff;
+      background: rgba(137, 207, 240, 0.2);
+      text-shadow: 0 0 6px #89CFF0;
+    }
+
+    /* Mobile Social Icons */
+    .mobile-social-icons {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 0.5rem;
+    }
+
+    .mobile-social-icons a {
+      color: #89CFF0;
+      font-size: 1.4rem;
+      margin: 0 0.3rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(137, 207, 240, 0.2);
+    }
+
+    /* Social icon replacements */
+    .fab.fa-facebook:before { content: "📘"; font-size: 1.1em; }
+    .fab.fa-instagram:before { content: "📷"; font-size: 1.1em; }
+
+    /* Hide desktop social */
+    .social-inline {
+      display: none !important;
+    }
+
+    /* Basic section styling for above the fold */
+    section {
+      padding: 1.5rem 0.8rem;
+    }
+
+    section h2 {
+      color: #6a0dad;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    section p {
+      color: #ffffff;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #89CFF0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #6a0dad;
+      text-shadow: 0 0 6px #89CFF0;
+    }
+
+    /* Critical button styles */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #89CFF0, #6a0dad);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(137, 207, 240, 0.4);
+      color: white;
+    }
+
+    /* Basic star background for performance */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(135deg, #000 0%, #1a1a2e 100%);
+    }
+
+    /* Rep team box - Critical above fold on mobile */
+    .rep-team-box {
+      background: rgba(137, 207, 240, 0.1);
+      border: 2px solid #89CFF0;
+      border-radius: 12px;
+      padding: 1rem !important;
+      margin: 1rem auto;
+      text-decoration: none;
+      color: white;
+      display: block;
+      transition: all 0.3s ease;
+      max-width: 95% !important;
+      box-shadow: 0 0 20px rgba(137, 207, 240, 0.2);
+    }
+
+    .rep-team-box h3 {
+      color: #89CFF0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem !important;
+    }
+
+    .rep-team-box p {
+      color: #fff;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem !important;
+    }
+
+    .learn-more {
+      color: #89CFF0;
+      font-weight: bold;
+      text-shadow: 0 0 5px #89CFF0;
+    }
+
+    /* Benefits highlighting */
+    .highlight-benefit {
+      color: #89CFF0;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(137, 207, 240, 0.3);
+    }
+      /* DISABLE STARS ON MOBILE FOR OPTIMAL PERFORMANCE */
+      @media (max-width: 768px) {
+        .star, .stars, #stars {
+          display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          animation: none !important;
+          transform: none !important;
+          will-change: auto !important;
+        }
+      }
+  </style>
+</head>
+
+<body class="loading">
+  <!-- Simplified star background -->
+  <div class="stars" id="stars"></div>
+  
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Kitchener-Waterloo Wizards</h1>
+        <p>"Magic on the Court"</p>
+      </div>
+      
+      <!-- Rep Team Box - Above the fold -->
+      <a href="rep-teams.html" class="rep-team-box">
+        <h3>🏀 25-26 Boys Rep Team</h3>
+        <p>Join our competitive boys rep team for the 2025-26 season!</p>
+        <span class="learn-more">Learn More →</span>
+      </a>
+    </div>
+  </header>
+
+  <nav>
+    <div class="mobile-nav-top">
+      <a href="index.html" class="logo-link" aria-label="Go to Home">
+        <img src="images/wizard-basketball-logo.png" alt="KW Wizards Logo" class="nav-logo">
+      </a>
+      <div class="mobile-social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61566563145647" target="_blank" aria-label="Follow us on Facebook" class="mobile-social-link">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/kitchener_waterloo_wizards/" target="_blank" aria-label="Follow us on Instagram" class="mobile-social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="development.html">Development</a>
+      <a href="rep-teams.html">Rep Teams</a>
+      <a href="individual-training.html">Individual Training</a>
+      <a href="upcoming-events.html">Wizard News</a>
+      <a href="photo-gallery.html">Photo Gallery</a>
+      <a href="registration.html">Registration</a>
+    </div>
+  </nav>
+  
+  <!-- Critical above-the-fold content -->
+  <section id="about">
+    <h2>Welcome to the Wizards</h2>
+    <p>
+      The Kitchener-Waterloo Wizards are more than just a youth basketball team —
+      we are a community built on passion, teamwork, and discipline. Our program is
+      designed not only to teach the game of basketball, but also to help young
+      athletes develop the life skills that will serve them well beyond the court.
+    </p>
+    <p>
+      We proudly practice locally in the Kitchener-Waterloo area, making it
+      convenient for families in our community to be part of the Wizards
+      experience. Our season runs <span class="highlight-benefit">from September through August</span>, with <span class="highlight-benefit">year-round training</span> and
+      practices held year-round to ensure players continue to grow, learn, and
+      stay active.
+    </p>
+  </section>
+
+  <section id="why-join-kwmba">
+    <h2>Benefits of Joining the Kitchener Waterloo Basketball Association</h2>
+    <p>At the Kitchener-Waterloo Wizards, we believe basketball is more than just a sport — it's a way to build connections, confidence, and character. What sets us apart is the <span class="highlight-benefit">strong relationships we build with our players</span>. Our coaches take the time to understand each athlete, guiding them not only in developing their basketball skills, but also in becoming confident and responsible individuals.</p>
+    <p>Another key advantage of joining the Wizards is our <span class="highlight-benefit">year-round training</span>. With practices and development opportunities running <span class="highlight-benefit">from September through August</span>, players are able to stay active, continue learning, and build their skills in every season. This consistent approach gives athletes the chance to grow steadily, rather than starting over each year.</p>
+    <p>When you join the Kitchener-Waterloo Wizards, you're not just signing up for basketball — you're <span class="highlight-benefit">joining a supportive community</span> that's committed to helping your child succeed on and off the court.</p>
+  </section>
+
+  <section id="events">
+    <h2>Ready to Join the Wizards?</h2>
+    <p>Start your basketball journey with the Kitchener-Waterloo Wizards. We offer programs for <span class="highlight-benefit">all ages and skill levels</span>, from beginner-friendly development sessions (coached in <span class="highlight-benefit">small groups of no more than 10</span> by our <span class="highlight-benefit">professional, experienced coaches</span>) to competitive rep teams.</p>
+    <p><span class="highlight-benefit">Registration is open year-round!</span> Get started today and discover the magic of basketball with our experienced coaching staff.</p>
+    <a href="registration.html" class="btn">Register Now</a>
+  </section>
+
+  <!-- Non-critical content will be loaded with animations via deferred JS -->
+  <!-- Placeholder for additional sections that will be enhanced -->
+
+  <!-- Deferred Meta Tags (Non-critical for initial paint) -->
+  <script>
+    // Add non-critical meta tags after initial load
+    setTimeout(() => {
+      const metaTags = [
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://kitchener-waterloo-wizards.com/' },
+        { property: 'og:title', content: 'Kitchener-Waterloo Wizards Basketball Association' },
+        { property: 'og:description', content: 'Youth basketball programs, rep teams, development training, and individual coaching in the KW area. Magic on the Court!' },
+        { property: 'og:image', content: 'https://kitchener-waterloo-wizards.com/images/wizard-basketball-logo.png' },
+        { property: 'twitter:card', content: 'summary_large_image' },
+        { name: 'keywords', content: 'basketball, youth sports, Kitchener, Waterloo, rep teams, basketball training, development program' },
+        { name: 'author', content: 'Kitchener-Waterloo Wizards Basketball Association' },
+        { name: 'robots', content: 'index, follow' }
+      ];
+      
+      metaTags.forEach(tag => {
+        const meta = document.createElement('meta');
+        Object.keys(tag).forEach(key => {
+          meta.setAttribute(key, tag[key]);
+        });
+        document.head.appendChild(meta);
+      });
+    }, 1000);
+  </script>
+
+  <!-- Load deferred styles after critical content -->
+  <link rel="preload" href="deferred-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="deferred-styles.css"></noscript>
+
+  <!-- Load deferred JavaScript for animations and interactions -->
+  <script src="deferred.js" defer></script>
+
+  <!-- Structured Data (can be deferred as it's for SEO, not rendering) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Kitchener-Waterloo Wizards Basketball Association",
+    "alternateName": "KW Wizards Basketball",
+    "description": "Youth basketball programs, rep teams, development training, and individual coaching in the Kitchener-Waterloo area. Magic on the Court!",
+    "url": "https://kitchener-waterloo-wizards.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kitchener-waterloo-wizards.com/images/wizard-basketball-logo.png",
+      "width": 500,
+      "height": 500
+    },
+    "sameAs": [
+      "https://www.instagram.com/kitchener_waterloo_wizards/",
+      "https://www.facebook.com/profile.php?id=61566563145647"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-416-419-0964",
+      "contactType": "customer service",
+      "email": "tricitywizards@gmail.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kitchener-Waterloo",
+      "addressRegion": "Ontario",
+      "addressCountry": "CA"
+    },
+    "sport": "Basketball"
+  }
+  </script>
+</body>
+</html>
